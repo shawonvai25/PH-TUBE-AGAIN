@@ -1,23 +1,32 @@
-console.log('video file added')
+console.log("added videoScript")
 
-// 1. Fetch , load & show categories on html
+// 1. Fetch , load and show categories on html
 
-// create loadCategories
-
+//create loadCategories
 const loadCategories = () => {
+  
     //fetch the data
-     fetch('https://openapi.programming-hero.com/api/phero-tube/categories')
+    fetch('https://openapi.programming-hero.com/api/phero-tube/categories')
     .then(res => res.json())
-    .then(data => console.log(data.categories[0]))
-    .catch((err) => console.log(err))
+    .then(data => displayCategories(data.categories))
+    .catch(error => console.log(error))
 };
 
-//create displayCategories
+//createDisplayCategories
+const displayCategories  = (categories) => {
+   const categoryContainer = document.getElementById("categories");
 
-const displayCategories = () => {
-   //add data in html
+   categories.forEach( (item) => {
+    console.log(item);
+    //create a button
 
+    const button = document.createElement("button");
+    button.classList = "btn";
+    button.innerText = item.category;
 
+    // add button to category container
+    categoryContainer.append(button);
+   });
 };
 
 loadCategories();

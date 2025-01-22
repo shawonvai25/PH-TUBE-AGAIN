@@ -3,23 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>phTube</title>
+    <title>PH_tube</title>
+
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
       rel="stylesheet"
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <!-- header start -->
     <header>
       <nav
-        class="flex justify-between mx-auto w-11/12 py-5 items-center border-b"
+        class="w-11/12 mx-auto py-4 flex justify-between items-center border-b"
       >
         <div class="logo w-[150px]">
-          <img class="w-full" src="./assets/Logo.png" alt="" />
+          <img src="./assets/Logo.png" alt="" />
         </div>
         <div class="search">
           <label class="input input-bordered flex items-center gap-2">
@@ -43,9 +43,13 @@
         </div>
       </nav>
     </header>
-    <!-- header end -->
 
-    <!-- script -->
+    <nav
+      id="categories"
+      class="flex justify-center py-3 gap-5 items-center"
+    ></nav>
+
+    <!-- scripts -->
     <script src="./scripts/video.js"></script>
   </body>
 </html>
