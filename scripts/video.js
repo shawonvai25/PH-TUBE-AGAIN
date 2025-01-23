@@ -2,6 +2,16 @@ console.log("added videoScript")
 
 // 1. Fetch , load and show categories on html
 
+function getTimeString(time){
+    //get hour and rest seconds
+    const hour = parseInt(time/ 3600);
+    let remainingSecond = time % 3600;
+    const minute = parseInt( remainingSecond / 60);
+    const second = (remainingSecond % 60);
+
+    return `${hour} hour ${minute} minute ${second} second ago`;
+}
+
 //create loadCategories
 const loadCategories = () => {
   
@@ -32,7 +42,9 @@ const loadVideos = () => {
     <img class="h-full w-full object-cover"
       src=${video.thumbnail}
       alt="Shoes" />
-      <span class="absolute right-2 bottom-2 bg-black text-white p-1 rounded">${video.others.posted_date}</span>
+      ${video.others.posted_date?.length == 0 ? "": `<span class="absolute right-2 bottom-2 bg-black text-white p-1 rounded tex-xs">${getTimeString(video.others.posted_date)}</span>`
+    }
+      
   </figure>
   <div class="px-0 py-2 flex gap-2 ">
    <div>
